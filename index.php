@@ -1,9 +1,9 @@
 <?php
  class producto{
     //definicion de atributos
-    public float $precio;
-    public string $nombre;
-    public bool $disponible;
+    public  $precio;
+    public  $nombre;
+    public  $disponible;
 
     //definicion de metodos
     public function mostrarNombreProducto(){
@@ -14,9 +14,12 @@
         echo "El precio es: ";
         echo $this ->precio;
     }
-    public function mostraDisponibilidadProducto(){
-        
-        echo $this ->disponible;
+    public function mostraDisponibleProducto(){
+        if($this->disponible){
+            echo"El producto esta disponible";
+        }else{
+            echo"El producto no esta disponible";
+        }
     }
  }
 
@@ -33,12 +36,15 @@
  $producto1 ->mostrarNombreProducto();
  echo"<br>";
  $producto1 ->mostraPrecioProducto();
+ echo"<br>";
+ $producto1 ->mostraDisponibleProducto();
+
 
 
  $producto2 = new producto();
  $producto2 ->nombre ="Silla";
  $producto2 ->precio = 100;
- $producto2 ->disponible = true;
+ $producto2 ->disponible = false;
 
  echo "<pre>";
  var_dump($producto2);
@@ -47,3 +53,5 @@
  $producto2 ->mostrarNombreProducto();
  echo"<br>";
  $producto2 ->mostraPrecioProducto();
+ echo"<br>";
+ $producto2 ->mostraDisponibleProducto();
